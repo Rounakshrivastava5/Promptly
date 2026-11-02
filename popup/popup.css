@@ -1,0 +1,25 @@
+* { box-sizing: border-box; }
+body { width: 360px; margin: 0; padding: 12px; font: 12px/1.4 system-ui, -apple-system, "Segoe UI", sans-serif;
+  background: #17181b; color: #e8e8ea; }
+header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
+h1 { font-size: 15px; margin: 0; }
+h2 { font-size: 13px; margin: 0 0 6px; }
+a { color: #8ea6ff; }
+.site { padding: 8px 10px; border-radius: 10px; background: #1f2024; border: 1px solid #2f3036; margin-bottom: 6px; }
+.site .top { display: flex; justify-content: space-between; gap: 8px; }
+.site .name { font-weight: 600; }
+.site .model { color: #9a9ba3; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; max-width: 190px; }
+.bar { height: 5px; border-radius: 3px; background: #2c2d33; overflow: hidden; margin: 5px 0 2px; }
+.fill { height: 100%; background: #3fb950; }
+.fill.warn { background: #d29922; } .fill.crit { background: #f85149; }
+.meta { display: flex; justify-content: space-between; color: #9a9ba3; }
+.alert { color: #f0c674; margin-top: 4px; }
+.hidden-note { color: #9a9ba3; margin-top: 4px; }
+.optimizer { margin-top: 12px; }
+textarea { width: 100%; min-height: 80px; resize: vertical; padding: 8px; border-radius: 8px; border: 1px solid #44454c;
+  background: #121316; color: #e8e8ea; font: 12px/1.5 ui-monospace, Consolas, monospace; }
+.btns { display: flex; gap: 6px; margin-top: 6px; }
+button { flex: 1; padding: 7px; border-radius: 8px; border: 1px solid #44454c; background: #2a2b31; color: #e8e8ea; cursor: pointer; }
+button.primary { background: #4c6ef5; border-color: #4c6ef5; }
+.muted { color: #9a9ba3; font-size: 11px; margin-top: 6px; }
+.empty { color: #9a9ba3; padding: 8px 0; }

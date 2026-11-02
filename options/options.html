@@ -1,0 +1,63 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>AI Chat Specifier — Options</title>
+  <style>
+    * { box-sizing: border-box; }
+    body { max-width: 760px; margin: 0 auto; padding: 24px 16px; font: 14px/1.5 system-ui, -apple-system, "Segoe UI", sans-serif;
+      background: #17181b; color: #e8e8ea; }
+    h1 { font-size: 20px; } h2 { font-size: 16px; margin-top: 28px; }
+    table { width: 100%; border-collapse: collapse; }
+    th, td { text-align: left; padding: 6px; border-bottom: 1px solid #2f3036; }
+    th { color: #9a9ba3; font-weight: 500; font-size: 12px; }
+    input, select { width: 100%; padding: 6px 8px; border-radius: 6px; border: 1px solid #44454c; background: #121316; color: #e8e8ea; }
+    input[type="checkbox"] { width: auto; }
+    label { display: block; margin: 10px 0 4px; color: #c6c7cd; }
+    .hint { color: #9a9ba3; font-size: 12px; }
+    .btns { display: flex; gap: 8px; margin-top: 24px; }
+    button { padding: 8px 16px; border-radius: 8px; border: 1px solid #44454c; background: #2a2b31; color: #e8e8ea; cursor: pointer; }
+    button.primary { background: #4c6ef5; border-color: #4c6ef5; }
+    #status { color: #3fb950; align-self: center; }
+  </style>
+</head>
+<body>
+  <h1>AI Chat Specifier — Options</h1>
+
+  <h2>Usage limits</h2>
+  <p class="hint">Chatbots don't publish exact quotas, and they vary by plan. Set these to match your plan; the extension counts the prompts you send in a rolling window.</p>
+  <table>
+    <thead><tr><th>Chatbot</th><th>Message limit</th><th>Window (hours)</th><th>Context window (tokens)</th></tr></thead>
+    <tbody id="limits"></tbody>
+  </table>
+  <label for="warnAt">Warn at (% of limit)</label>
+  <input id="warnAt" type="number" min="10" max="100" step="5">
+
+  <label><input id="showOverlay" type="checkbox"> Show the floating status pill on chatbot pages</label>
+
+  <h2>Prompt optimizer</h2>
+  <label for="mode">Mode</label>
+  <select id="mode">
+    <option value="local">Offline (rule-based, free, private)</option>
+    <option value="claude">Claude API (smarter rewrites, uses your API key)</option>
+  </select>
+  <label for="apiKey">Anthropic API key</label>
+  <input id="apiKey" type="password" placeholder="sk-ant-…" autocomplete="off">
+  <p class="hint">Stored only in this browser's extension storage and sent only to api.anthropic.com. Get one at console.anthropic.com.</p>
+  <label for="model">Model</label>
+  <input id="model" type="text">
+
+  <h2>Data</h2>
+  <p class="hint">All usage data stays on this device.</p>
+
+  <div class="btns">
+    <button class="primary" id="save">Save</button>
+    <button id="reset">Reset usage counts</button>
+    <span id="status"></span>
+  </div>
+
+  <script src="../src/settings.js"></script>
+  <script src="../src/sites.js"></script>
+  <script src="options.js"></script>
+</body>
+</html>

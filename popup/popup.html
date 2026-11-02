@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <header>
+    <h1>AI Chat Specifier</h1>
+    <a href="#" id="options">Options</a>
+  </header>
+  <main id="sites"></main>
+  <section class="optimizer">
+    <h2>Quick prompt optimizer</h2>
+    <textarea id="raw" placeholder="Type a rough prompt, e.g. “explain docker to me”"></textarea>
+    <div class="btns">
+      <button id="optimize" class="primary">✨ Optimize</button>
+      <button id="copy">Copy</button>
+    </div>
+    <div id="note" class="muted"></div>
+  </section>
+  <footer class="muted">Usage is counted locally from prompts sent in this browser. Limits are estimates — tune them in Options.</footer>
+  <script src="../src/settings.js"></script>
+  <script src="../src/sites.js"></script>
+  <script src="../src/optimizer.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>
