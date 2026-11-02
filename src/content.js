@@ -3,8 +3,8 @@
 
 (async function main() {
   const site = detectSite();
-  if (!site || window.__aiSpecifierLoaded) return;
-  window.__aiSpecifierLoaded = true;
+  if (!site || window.__promptlyLoaded) return;
+  window.__promptlyLoaded = true;
 
   let settings = await getSettings();
   let usage = await getUsage();
@@ -83,7 +83,7 @@
     const users = queryAll(site.userMessages).map((el) => ({ el, role: "User" }));
     const bots = queryAll(site.assistantMessages).map((el) => ({ el, role: "Assistant" }));
     return [...users, ...bots]
-      .filter(({ el }) => !el.closest("#ai-specifier-host"))
+      .filter(({ el }) => !el.closest("#promptly-host"))
       .sort((a, b) => (a.el.compareDocumentPosition(b.el) & Node.DOCUMENT_POSITION_FOLLOWING ? -1 : 1))
       .map(({ el, role }) => ({ role, text: (el.innerText || el.textContent || "").trim() }))
       .filter((m) => m.text);
@@ -101,7 +101,7 @@
     for (let i = 0; near && i < 4; i++) near = near.parentElement;
     if (near) regions.push(near);
     for (const r of regions) {
-      if (r.closest("#ai-specifier-host")) continue;
+      if (r.closest("#promptly-host")) continue;
       const text = (r.innerText || "").slice(0, 2000);
       for (const re of LIMIT_PATTERNS) {
         const m = text.match(re);
@@ -134,7 +134,7 @@
   // ---------- Overlay UI (shadow DOM so the host page's CSS can't interfere) ----------
 
   const host = document.createElement("div");
-  host.id = "ai-specifier-host";
+  host.id = "promptly-host";
   const root = host.attachShadow({ mode: "open" });
   root.innerHTML = `
     <style>
@@ -192,7 +192,7 @@
     <div class="wrap">
       <div class="panel" hidden></div>
       <div class="pill"></div>
-      <div class="icon" data-act="restore" title="AI Chat Specifier — click to expand" hidden>
+      <div class="icon" data-act="restore" title="Promptly — click to expand" hidden>
         <img src="${chrome.runtime.getURL("icons/icon48.png")}" alt="">
         <span class="badge"></span>
         <button class="x" data-act="close" title="Close widget">×</button>
@@ -255,7 +255,7 @@
     if (ctxRatio >= settings.warnAt) alerts.push(`This conversation is ~${Math.round(ctxRatio * 100)}% of the context window — answers may degrade. Start a fresh chat with a handoff.`);
 
     panel.innerHTML = `
-      <div class="head"><strong>AI Chat Specifier</strong>
+      <div class="head"><strong>Promptly</strong>
         <span class="ctls">
           <button class="ctl" data-act="minimize" title="Minimize to icon">–</button>
           <button class="ctl" data-act="close" title="Close widget">×</button>

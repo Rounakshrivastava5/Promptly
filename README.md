@@ -1,8 +1,8 @@
 <div align="center">
 
-<img src="icons/icon128.png" alt="AI Chat Specifier" width="112">
+<img src="icons/icon128.png" alt="Promptly" width="112">
 
-# AI Chat Specifier
+# Promptly
 
 **One small widget for every AI chatbot you use.**
 See your model, usage and context at a glance. Get warned before you hit a limit. Hand off the conversation to another bot in one click, and turn rough prompts into great ones.
