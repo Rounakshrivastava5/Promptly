@@ -14,6 +14,10 @@ See your model, usage and context at a glance. Get warned before you hit a limit
 ![Privacy](https://img.shields.io/badge/data-stays%20local-C026D3?style=flat-square)
 ![License: MIT](https://img.shields.io/badge/license-MIT-140A3A?style=flat-square)
 
+<br><br>
+
+<img src="docs/images/widget-panel.png" alt="Promptly widget showing model, usage and a limit warning on a chat page" width="860">
+
 </div>
 
 ---
@@ -30,6 +34,39 @@ See your model, usage and context at a glance. Get warned before you hit a limit
 | ✨ **Prompt optimizer** | Rewrites a rough prompt into a structured one (role, task, context, requirements, output format). Works offline, or uses Claude with your own API key. |
 | 🪶 **Stays out of your way** | Expand it, shrink it to an icon that keeps a status dot, or close it on a site. Each site remembers its own setting. |
 | 🗂️ **Dashboard popup** | Every chatbot's usage on one screen, plus a quick optimizer in the toolbar. |
+
+## 📸 See it in action
+
+### Prompt optimizer
+Type a rough prompt, press <kbd>Alt</kbd> + <kbd>Shift</kbd> + <kbd>O</kbd>, and get a structured version you can drop straight into the chat box.
+
+<p align="center"><img src="docs/images/optimizer.png" alt="Prompt optimizer rewriting 'explain how docker works' into a structured prompt" width="820"></p>
+
+### Context switch & handoff
+Running low on messages, or the chat is getting too long? Pick another bot, or a fresh chat on the same one, and Promptly pastes a summary-ready transcript there for you.
+
+<p align="center"><img src="docs/images/handoff.png" alt="Handoff dialog with target chatbots and the generated transcript prompt" width="820"></p>
+
+### Dashboard & settings
+
+<table>
+  <tr>
+    <td align="center" width="38%"><img src="docs/images/popup.png" alt="Toolbar popup showing usage for each chatbot" width="300"><br><sub><b>Toolbar popup</b>: every chatbot at a glance</sub></td>
+    <td align="center"><img src="docs/images/options.png" alt="Options page with limits per chatbot and optimizer settings" width="480"><br><sub><b>Options</b>: limits per plan, warning threshold, optimizer mode</sub></td>
+  </tr>
+</table>
+
+### Stays out of your way
+
+<table>
+  <tr>
+    <td align="center"><img src="docs/images/widget-pill.png" alt="Compact status pill" height="56"><br><sub><b>Pill</b>: site · model · usage</sub></td>
+    <td align="center"><img src="docs/images/widget-icon.png" alt="Minimized icon with status dot" height="64"><br><sub><b>Minimized</b>: just the icon with a status dot</sub></td>
+    <td align="center"><sub><b>Closed</b>: hidden on that site,<br>bring it back from the popup</sub></td>
+  </tr>
+</table>
+
+<sub>Screenshots show Promptly's real UI on a demo chat page with sample data.</sub>
 
 ## 🤖 Supported chatbots
 
@@ -105,6 +142,7 @@ Open **Options** from the popup to set:
 ```
 ├── manifest.json        # MV3 manifest
 ├── icons/               # App icon (SVG source + PNG sizes)
+├── docs/images/         # README screenshots
 ├── src/
 │   ├── settings.js      # Defaults, storage, usage-window math
 │   ├── sites.js         # Per-site selectors & limit-message patterns

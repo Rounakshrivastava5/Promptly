@@ -19,7 +19,7 @@ a { color: #8ea6ff; }
 textarea { width: 100%; min-height: 80px; resize: vertical; padding: 8px; border-radius: 8px; border: 1px solid #44454c;
   background: #121316; color: #e8e8ea; font: 12px/1.5 ui-monospace, Consolas, monospace; }
 .btns { display: flex; gap: 6px; margin-top: 6px; }
-button { flex: 1; padding: 7px; border-radius: 8px; border: 1px solid #44454c; background: #2a2b31; color: #e8e8ea; cursor: pointer; }
+button { flex: 1; font: inherit; padding: 7px; border-radius: 8px; border: 1px solid #44454c; background: #2a2b31; color: #e8e8ea; cursor: pointer; }
 button.primary { background: #4c6ef5; border-color: #4c6ef5; }
 .muted { color: #9a9ba3; font-size: 11px; margin-top: 6px; }
 .empty { color: #9a9ba3; padding: 8px 0; }
